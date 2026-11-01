@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTech Digital — Soutenance Académique | Pitch Deck</title>
+  <meta name="description" content="Présentation professionnelle de la startup tunisienne EcoTech Digital et de son produit EcoConnect. Projet pour le module Techniques de recherche d'emploi et Marketing de soi.">
+  
+  <!-- Polices Google Fonts pour une typographie épurée et moderne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --forest-dark: #0d281e;
+      --forest: #103b2b;
+      --forest-light: #164e3a;
+      --emerald: #2d6a4f;
+      --mint: #52b788;
+      --mint-light: #d8f3dc;
+      --mint-ultra: #f0fdf4;
+      --beige: #f4f1de;
+      --beige-warm: #faf8f5;
+      --sand-gold: #d4a373;
+      --charcoal: #1e293b;
+      --charcoal-light: #475569;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+      --shadow-sm: 0 2px 6px rgba(16, 59, 43, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(16, 59, 43, 0.08), 0 8px 10px -6px rgba(16, 59, 43, 0.04);
+      --shadow-lg: 0 20px 30px -10px rgba(16, 59, 43, 0.15);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0b1f16;
+      color: var(--charcoal);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      user-select: text;
+    }
+
+    /* BARRE D'OUTILS SUPÉRIEURE (HEADER FLOTTANT) */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 40, 30, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(82, 183, 136, 0.2);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo-icon-svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--mint);
+      font-weight: 500;
+    }
+
+    .nav-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 14px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .slide-counter {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--mint);
+      letter-spacing: 0.5px;
+    }
+
+    .timer-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #e2e8f0;
+      font-variant-numeric: tabular-nums;
+      padding-left: 8px;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .timer-btn {
+      background: none;
+      border: none;
+      color: var(--mint);
+      cursor: pointer;
+      font-size: 11px;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .timer-btn:hover {
+      background: rgba(82, 183, 136, 0.2);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-action {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: white;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: var(--emerald);
+      border-color: var(--mint);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .btn-action.active {
+      background: var(--mint);
+      color: var(--forest-dark);
+      border-color: var(--mint);
+    }
+
+    .btn-primary-action {
+      background: var(--mint);
+      color: var(--forest-dark);
+      border: none;
+      font-weight: 700;
+    }
+    .btn-primary-action:hover {
+      background: #74c69d;
+      color: var(--forest-dark);
+    }
+
+    /* CONTENEUR DE PRÉSENTATION */
+    .deck-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .slide-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: var(--beige-warm);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(82, 183, 136, 0.3);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* DIAPOSITIVES */
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 40px 48px;
+      flex-direction: column;
+      position: relative;
+      background: var(--beige-warm);
+      overflow-y: auto;
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.995); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* EN-TÊTE STANDARD DES DIAPOSITIVES */
+    .slide-header {
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .category-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--mint-light);
+      color: var(--forest);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--emerald);
+      border-radius: 50%;
+    }
+
+    .academic-tag {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .slide-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--forest-dark);
+      letter-spacing: -0.6px;
+      line-height: 1.2;
+    }
+
+    .slide-subtitle {
+      font-size: 14px;
+      color: var(--charcoal-light);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* CONTENU PRINCIPAL DE SLIDE */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* PIED DE DIAPOSITIVE */
+    .slide-footer {
+      margin-top: auto;
+      padding-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 11px;
+      color: var(--muted);
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide-footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    /* GRILLES ET COMPOSANTS REUTILISABLES */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-accent-forest {
+      border-top: 4px solid var(--forest);
+    }
+    .card-accent-emerald {
+      border-top: 4px solid var(--emerald);
+    }
+    .card-accent-mint {
+      border-top: 4px solid var(--mint);
+    }
+    .card-accent-gold {
+      border-top: 4px solid var(--sand-gold);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--charcoal-light);
+      line-height: 1.5;
+    }
+
+    .card-list {
+      list-style: none;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-list li {
+      font-size: 12px;
+      color: var(--charcoal);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .card-list li span.bullet {
+      color: var(--emerald);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* SLIDE 1 : COUVERTURE SPÉCIALE */
+    .slide-cover {
+      background: linear-gradient(135deg, #0d281e 0%, #103b2b 60%, #164e3a 100%);
+      color: white;
+      justify-content: center;
+      padding: 48px 56px;
+    }
+
+    .cover-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 36px;
+      align-items: center;
+      height: 100%;
+    }
+
+    .cover-left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cover-badge-top {
+      align-self: flex-start;
+      background: rgba(82, 183, 136, 0.15);
+      border: 1px solid rgba(82, 183, 136, 0.4);
+      color: var(--mint);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 30px;
+    }
+
+    .cover-hero-title {
+      font-size: 46px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .cover-slogan {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--mint-light);
+      font-style: italic;
+    }
+
+    .cover-intro {
+      font-size: 14px;
+      color: #cbd5e1;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .cover-product-callout {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(82, 183, 136, 0.3);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .product-pill-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--mint);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest-dark);
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .product-callout-text h4 {
+      font-size: 13px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .product-callout-text p {
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    /* CARTE FORMULAIRE ÉTUDIANT (MODIFIABLE) */
+    .student-dossier-card {
+      background: white;
+      color: var(--charcoal);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dossier-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dossier-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--forest);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .academic-pill {
+      background: var(--mint-light);
+      color: var(--forest-dark);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .meta-field {
+      margin-bottom: 12px;
+    }
+
+    .meta-field:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-field label {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .meta-field .editable-input {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--forest-dark);
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      outline: none;
+      background: transparent;
+      width: 100%;
+    }
+
+    .meta-field .editable-input:hover,
+    .meta-field .editable-input:focus {
+      background: #f8fafc;
+      border-color: var(--mint);
+    }
+
+    .meta-field-highlight {
+      background: #f1f5f9;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border-left: 3px solid var(--emerald);
+    }
+
+    /* MOCKUP MOBILE (SLIDE 5) */
+    .mobile-mockup-container {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      height: 100%;
+    }
+
+    .smartphone-frame {
+      width: 290px;
+      height: 480px;
+      background: #0f172a;
+      border-radius: 40px;
+      padding: 10px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      border: 4px solid #334155;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .smartphone-screen {
+      background: white;
+      border-radius: 30px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .notch-bar {
+      height: 22px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 4px;
+    }
+
+    .notch-island {
+      width: 70px;
+      height: 12px;
+      background: #0f172a;
+      border-radius: 10px;
+    }
+
+    .app-screen-header {
+      background: var(--forest);
+      color: white;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .app-screen-header h5 {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .app-screen-header span {
+      font-size: 10px;
+      background: rgba(82, 183, 136, 0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .app-screen-search {
+      padding: 10px 12px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mini-search-box {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .materials-pills-scroll {
+      display: flex;
+      gap: 6px;
+      padding: 8px 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .mini-mat-pill {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .mini-mat-pill.active {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .app-mock-map-area {
+      flex: 1;
+      background: #e2e8f0;
+      position: relative;
+      background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+      overflow: hidden;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .mock-pin {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: var(--emerald);
+      color: white;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border: 2px solid white;
+    }
+
+    .mock-pin::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      transform: rotate(45deg);
+    }
+
+    .pin-1 { top: 35px; left: 60px; }
+    .pin-2 { top: 75px; right: 50px; background: var(--mint); }
+    .pin-3 { top: 120px; left: 110px; }
+
+    .mini-location-card {
+      background: white;
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      border: 1px solid var(--border);
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-location-card h6 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .mini-location-card p {
+      font-size: 9.5px;
+      color: var(--muted);
+      margin: 2px 0 6px 0;
+    }
+
+    .btn-mock-directions {
+      background: var(--emerald);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 10px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    /* USER JOURNEY STEPS (SLIDE 5) */
+    .journey-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .journey-step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: white;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-number-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 12px;
+      color: var(--charcoal-light);
+      line-height: 1.4;
+    }
+
+    /* INSTAGRAM MOCKUP (SLIDE 9) */
+    .social-strategy-container {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 22px;
+      height: 100%;
+    }
+
+    .instagram-feed-card {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ig-profile-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .ig-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #103b2b 0%, #52b788 100%);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .ig-user-info h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--forest-dark);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .verified-badge {
+      color: #0284c7;
+      font-size: 12px;
+    }
+
+    .ig-user-info p {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .ig-stats-row {
+      display: flex;
+      gap: 16px;
+      margin: 8px 0;
+      font-size: 11px;
+    }
+
+    .ig-stats-row strong {
+      color: var(--forest-dark);
+    }
+
+    .ig-bio {
+      font-size: 11px;
+      color: var(--charcoal);
+      line-height: 1.35;
+      margin-bottom: 12px;
+      background: #f8fafc;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .ig-grid-posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .ig-post-tile {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6px;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .ig-post-tile:hover {
+      transform: scale(1.03);
+    }
+
+    .tile-1 { background: linear-gradient(135deg, #103b2b, #2d6a4f); }
+    .tile-2 { background: linear-gradient(135deg, #0d9488, #52b788); }
+    .tile-3 { background: linear-gradient(135deg, #b45309, #d4a373); }
+    .tile-4 { background: linear-gradient(135deg, #1e3a8a, #38bdf8); }
+    .tile-5 { background: linear-gradient(135deg, #164e3a, #74c69d); }
+    .tile-6 { background: linear-gradient(135deg, #475569, #94a3b8); }
+
+    .tile-badge {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 3px;
+      padding: 1px 4px;
+      font-size: 8px;
+    }
+
+    /* TABLEAU CALENDRIER ÉDITORIAL */
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      background: white;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .calendar-table th {
+      background: var(--forest);
+      color: white;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .calendar-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--charcoal);
+      vertical-align: middle;
+    }
+
+    .calendar-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .day-pill {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 10.5px;
+      background: var(--mint-light);
+      color: var(--forest);
+    }
+
+    /* DRAWER NOTES DE L'ORATEUR */
+    .speaker-notes-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-top: 3px solid var(--emerald);
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.25);
+      z-index: 90;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 280px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .speaker-notes-drawer.open {
+      transform: translateY(0);
+    }
+
+    .notes-header {
+      padding: 10px 24px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .notes-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--forest);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .notes-body {
+      padding: 16px 24px;
+      overflow-y: auto;
+      font-size: 13.5px;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    .notes-body p {
+      margin-bottom: 8px;
+    }
+
+    .oral-cue {
+      background: #f0fdf4;
+      border-left: 3px solid var(--mint);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--forest-dark);
+      margin-top: 8px;
+    }
+
+    /* TIROIR D'APERÇU DES SLIDES (THUMBNAILS) */
+    .overview-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 31, 22, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 110;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .overview-modal.open {
+      display: block;
+    }
+
+    .overview-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .overview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .overview-header h3 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .thumbnails-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .thumb-card {
+      background: white;
+      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+      padding: 14px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .thumb-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--mint);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .thumb-card.active {
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px var(--mint);
+    }
+
+    .thumb-num {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--forest);
+      background: var(--mint-light);
+      padding: 2px 6px;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+
+    .thumb-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.3;
+    }
+
+    /* CONTROLES FLOTTANTS DE NAVIGATION */
+    .floating-nav {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13, 40, 30, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid rgba(82, 183, 136, 0.3);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .nav-arrow-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .nav-arrow-btn:hover:not(:disabled) {
+      background: var(--mint);
+      color: var(--forest-dark);
+      transform: scale(1.05);
+    }
+
+    .nav-arrow-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    /* MODE ÉDITION */
+    body.edit-mode [contenteditable="true"] {
+      outline: 2px dashed #f59e0b !important;
+      outline-offset: 3px;
+      background: rgba(245, 158, 11, 0.05);
+      border-radius: 4px;
+    }
+
+    /* PRINT STYLES (EXPORTATION PDF VIA NAVIGATEUR) */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .top-bar, .floating-nav, .speaker-notes-drawer, .overview-modal {
+        display: none !important;
+      }
+      .deck-container {
+        padding: 0 !important;
+      }
+      .slide-wrapper {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+      }
+      .slide {
+        display: flex !important;
+        page-break-after: always !important;
+        height: 100vh !important;
+        aspect-ratio: 16 / 9 !important;
+        padding: 30px 40px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRE D'OUTILS SUPÉRIEURE FLOTTANTE -->
+  <header class="top-bar">
+    <div class="brand-group">
+      <a href="#" class="brand-logo-badge" title="EcoTech Digital">
+        <!-- SVG Vector Logo EcoTech Digital -->
+        <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" fill="#164E3A" stroke="#52B788" stroke-width="4"/>
+          <!-- Feuille végétale stylisée & circuits imprimés -->
+          <path d="M50 20C50 20 72 32 72 54C72 68 60 78 50 82C40 78 28 68 28 54C28 32 50 20 50 20Z" fill="#2D6A4F" stroke="#52B788" stroke-width="2.5"/>
+          <path d="M50 24V78" stroke="#D8F3DC" stroke-width="3" stroke-linecap="round"/>
+          <path d="M50 40L64 34" stroke="#D8F3DC" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="64" cy="34" r="3" fill="#52B788"/>
+          <path d="M50 52L36 46" stroke="#D8F3DC" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="36" cy="46" r="3" fill="#52B788"/>
+          <path d="M50 64L62 60" stroke="#D8F3DC" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="62" cy="60" r="3" fill="#52B788"/>
+        </svg>
+        <div class="brand-text">
+          <h1>EcoTech Digital</h1>
+          <span>« Le numérique au service de la planète »</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Compteur et Minuteur de Soutenance -->
+    <div class="nav-stats">
+      <div class="slide-counter" id="slideIndicator">SLIDE 01 / 12</div>
+      <div class="timer-badge" title="Minuteur d'oral">
+        ⏱ <span id="timerDisplay">00:00</span>
+        <button class="timer-btn" id="timerToggleBtn" title="Démarrer / Pause">▶</button>
+        <button class="timer-btn" id="timerResetBtn" title="Réinitialiser">↺</button>
+      </div>
+    </div>
+
+    <!-- Actions Rapides -->
+    <div class="header-actions">
+      <button class="btn-action" id="overviewBtn" title="Aperçu des diapositives (Touche O)">
+        ▦ Vue Grille
+      </button>
+      <button class="btn-action" id="notesToggleBtn" title="Notes de l'orateur pour la soutenance (Touche N)">
+        🎙 Notes Orales
+      </button>
+      <button class="btn-action" id="editModeBtn" title="Activer la modification de texte directe (Touche E)">
+        ✏️ Mode Édition
+      </button>
+      <button class="btn-action" id="printBtn" title="Exporter en PDF via l'impression">
+        🖨️ PDF / Imprimer
+      </button>
+      <button class="btn-action btn-primary-action" id="fullscreenBtn" title="Plein écran (Touche F)">
+        ⛶ Plein Écran
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENEUR DES DIAPOSITIVES -->
+  <main class="deck-container">
+    <div class="slide-wrapper" id="slideDeck">
+
+      <!-- ========================================================
+           SLIDE 1 : COUVERTURE & DOSSIER ACADÉMIQUE
+      ======================================================== -->
+      <section class="slide slide-cover active" data-slide="1">
+        <div class="cover-layout">
+          <div class="cover-left">
+            <div class="cover-badge-top">
+              🎓 PROJET ACADÉMIQUE • TRE & MARKETING DE SOI
+            </div>
+            
+            <h2 class="cover-hero-title">EcoTech Digital</h2>
+            
+            <p class="cover-slogan">« Le numérique au service de la planète. »</p>
+            
+            <p class="cover-intro">
+              Startup tunisienne dédiée à la transition écologique responsable par le développement web éco-conçu, la communication digitale éthique et la sensibilisation citoyenne.
+            </p>
+
+            <div class="cover-product-callout">
+              <div class="product-pill-icon">EC</div>
+              <div class="product-callout-text">
+                <h4>PRODUIT PHARE : EcoConnect</h4>
+                <p>Plateforme collaborative d'identification des filières de tri et de recyclage en Tunisie.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARTE FORMULAIRE ÉTUDIANT (MODIFIABLE DIRECTEMENT) -->
+          <div class="student-dossier-card">
+            <div class="dossier-header">
+              <span class="dossier-title">Fiche de Soutenance</span>
+              <span class="academic-pill">Édition 2025 – 2026</span>
+            </div>
+
+            <div class="meta-field">
+              <label>Nom de l'étudiant / Porteur du projet</label>
+              <input type="text" class="editable-input" value="[Prénom & NOM de l'étudiant]" id="studentName">
+            </div>
+
+            <div class="meta-field">
+              <label>Filière / Niveau d'études</label>
+              <input type="text" class="editable-input" value="[Licence / Mastère en Informatique / Marketing Digital]" id="studentDegree">
+            </div>
+
+            <div class="meta-field">
+              <label>Établissement Universitaire</label>
+              <input type="text" class="editable-input" value="[Université / Institut Supérieur — Tunisie]" id="studentInstitution">
+            </div>
+
+            <div class="meta-field meta-field-highlight">
+              <label>Enseignant(e) & Encadrant(e)</label>
+              <input type="text" class="editable-input" value="[Nom du Professeur Responsable]" id="studentTeacher">
+            </div>
+
+            <div class="meta-field" style="margin-top: 10px;">
+              <label>Module Académique</label>
+              <div style="font-size: 11.5px; font-weight: 700; color: var(--emerald);">
+                Techniques de recherche d’emploi et Marketing de soi
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 2 : PRÉSENTATION DE L'ENTREPRISE
+      ======================================================== -->
+      <section class="slide" data-slide="2">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">01 • IDENTITÉ DE MARQUE</span>
+            <span class="academic-tag">Profil d'Entreprise</span>
+          </div>
+          <h2 class="slide-title">Présentation d'EcoTech Digital</h2>
+          <p class="slide-subtitle">Une jeune pousse tunisienne pionnière à la croisée de l'ingénierie logicielle et de l'impact environnemental</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2" style="margin-bottom: 20px;">
+            <div class="card card-accent-forest">
+              <div class="card-title">
+                🌿 Notre Mission Fondatrice
+              </div>
+              <p class="card-desc">
+                Accompagner la transition écologique en Tunisie en concevant des outils numériques intuitifs, rigoureux et universellement accessibles, permettant aux citoyens, entreprises et collectivités de réduire durablement leur empreinte environnementale.
+              </p>
+            </div>
+
+            <div class="card card-accent-gold">
+              <div class="card-title">
+                🔭 Notre Vision Stratégique
+              </div>
+              <p class="card-desc">
+                Devenir la référence tunisienne et régionale du numérique éco-responsable et de la sensibilisation environnementale 2.0, en prouvant que l'ingénierie web peut être un levier d'action civique concret et rentable.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="card">
+              <div style="font-size: 20px; font-weight: 800; color: var(--mint); margin-bottom: 4px;">01</div>
+              <div style="font-weight: 700; font-size: 13.5px; color: var(--forest); margin-bottom: 6px;">Éco-Responsabilité</div>
+              <p style="font-size: 11.5px; color: var(--charcoal-light);">Sobriété logicielle (Green IT), hébergement optimisé et réduction drastique de l'empreinte carbone numérique.</p>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 20px; font-weight: 800; color: var(--mint); margin-bottom: 4px;">02</div>
+              <div style="font-weight: 700; font-size: 13.5px; color: var(--forest); margin-bottom: 6px;">Rigueur Scientifique</div>
+              <p style="font-size: 11.5px; color: var(--charcoal-light);">Fiches de tri validées, respect des filières de valorisation réelles et rejet absolu du greenwashing.</p>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 20px; font-weight: 800; color: var(--mint); margin-bottom: 4px;">03</div>
+              <div style="font-weight: 700; font-size: 13.5px; color: var(--forest); margin-bottom: 6px;">Inclusion Citoyenne</div>
+              <p style="font-size: 11.5px; color: var(--charcoal-light);">Interfaces légères, bilingues et utilisables sur tout type d'appareil, adaptées au contexte tunisien.</p>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 20px; font-weight: 800; color: var(--mint); margin-bottom: 4px;">04</div>
+              <div style="font-weight: 700; font-size: 13.5px; color: var(--forest); margin-bottom: 6px;">Éthique & Transparence</div>
+              <p style="font-size: 11.5px; color: var(--charcoal-light);">Honnêteté sur les données environnementales et respect rigoureux de la confidentialité (INPDP).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • « Le numérique au service de la planète »</div>
+          <div>Slide 02 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 3 : PROBLÉMATIQUE ENVIRONNEMENTALE
+      ======================================================== -->
+      <section class="slide" data-slide="3">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">02 • DIAGNOSTIC DE TERRAIN</span>
+            <span class="academic-tag">Enjeux & Constats en Tunisie</span>
+          </div>
+          <h2 class="slide-title">La Problématique Environnementale</h2>
+          <p class="slide-subtitle">La rupture entre la volonté citoyenne d'agir et l'absence d'outils numériques fiables et localisés</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-3" style="margin-bottom: 20px;">
+            <div class="card card-accent-forest">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 18px; font-weight: 800; color: #dc2626;">01</span>
+                <span style="font-size: 10px; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px;">OPACITÉ TERRITORIALE</span>
+              </div>
+              <div class="card-title">Accès limité aux points de tri</div>
+              <p class="card-desc">
+                Les citoyens tunisiens désireux de recycler ne disposent d'aucune cartographie officielle, centralisée et actualisée des bacs de tri et des acteurs de revalorisation de leur quartier.
+              </p>
+            </div>
+
+            <div class="card card-accent-forest">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 18px; font-weight: 800; color: #dc2626;">02</span>
+                <span style="font-size: 10px; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px;">CONFUSION TECHNIQUE</span>
+              </div>
+              <div class="card-title">Méconnaissance des matières</div>
+              <p class="card-desc">
+                Confusion généralisée entre plastiques recyclables (bouteilles transparentes PET, flacons PEHD) et emballages non valorisables, entraînant une contamination des filières de collecte.
+              </p>
+            </div>
+
+            <div class="card card-accent-forest">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 18px; font-weight: 800; color: #dc2626;">03</span>
+                <span style="font-size: 10px; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px;">DÉFICIT DIGITAL</span>
+              </div>
+              <div class="card-title">Manque de visibilité des acteurs</div>
+              <p class="card-desc">
+                Les associations de terrain et initiatives vertes locales peinent à mobiliser les jeunes générations en raison de supports de communication obsolètes et d'une absence d'expérience mobile.
+              </p>
+            </div>
+          </div>
+
+          <!-- ENCADRÉ DÉFI FONDAMENTAL -->
+          <div style="background: var(--forest); color: white; border-radius: var(--radius-md); padding: 18px 24px; display: flex; align-items: center; gap: 20px;">
+            <div style="font-size: 32px; flex-shrink: 0;">🎯</div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: var(--mint); text-transform: uppercase; letter-spacing: 1px;">
+                LE DÉFI CENTRAL DU PROJET
+              </div>
+              <div style="font-size: 14px; font-weight: 500; margin-top: 2px; line-height: 1.4;">
+                Comment transformer la bonne volonté écologique des Tunisiens en réflexes quotidiens mesurables, en leur offrant une solution numérique ergonomique, instantanée et gratuite ?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Problématique & Diagnostic</div>
+          <div>Slide 03 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 4 : NOTRE SOLUTION & SYNERGIE
+      ======================================================== -->
+      <section class="slide" data-slide="4">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">03 • MODÈLE DE SOLUTION</span>
+            <span class="academic-tag">Synergie Hybride</span>
+          </div>
+          <h2 class="slide-title">Notre Solution : L'Écosystème EcoTech Digital</h2>
+          <p class="slide-subtitle">Une complémentarité vertueuse entre prestations professionnelles B2B et impact civique d'utilité publique</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2" style="align-items: stretch; height: 100%;">
+            <!-- AGENCE DE SERVICES B2B -->
+            <div class="card card-accent-forest" style="display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                <span style="background: var(--forest); color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+                  PÔLE AGENCE B2B
+                </span>
+                <span style="font-size: 12px; color: var(--muted); font-weight: 600;">EcoTech Digital</span>
+              </div>
+              <h3 style="font-size: 18px; font-weight: 800; color: var(--forest-dark); margin-bottom: 8px;">
+                Prestations Numériques Responsables
+              </h3>
+              <p style="font-size: 12px; color: var(--charcoal-light); margin-bottom: 12px;">
+                Génère de la valeur économique en proposant des services éco-conçus aux entreprises et institutions :
+              </p>
+              <ul class="card-list" style="margin-top: 0;">
+                <li><span class="bullet">✔</span> <strong>EcoWeb :</strong> Création de sites web optimisés à faible empreinte carbone.</li>
+                <li><span class="bullet">✔</span> <strong>EcoMarketing :</strong> Community management éthique et campagnes de sensibilisation.</li>
+                <li><span class="bullet">✔</span> <strong>EcoAwareness :</strong> Ateliers de sobriété numérique et formations RSE.</li>
+              </ul>
+              <div style="margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--border); font-size: 11.5px; color: var(--emerald); font-weight: 700;">
+                ➜ Apporte les compétences logicielles et le financement nécessaire.
+              </div>
+            </div>
+
+            <!-- PRODUIT CITOYEN ECOCONNECT -->
+            <div class="card card-accent-mint" style="display: flex; flex-direction: column; background: #fafdfa;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                <span style="background: var(--emerald); color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+                  PRODUIT CITOYEN
+                </span>
+                <span style="font-size: 12px; color: var(--muted); font-weight: 600;">EcoConnect</span>
+              </div>
+              <h3 style="font-size: 18px; font-weight: 800; color: var(--forest-dark); margin-bottom: 8px;">
+                Plateforme Civique de Tri & Recyclage
+              </h3>
+              <p style="font-size: 12px; color: var(--charcoal-light); margin-bottom: 12px;">
+                Portail web & mobile gratuit guidant concrètement les citoyens et étudiants vers les bons gestes :
+              </p>
+              <ul class="card-list" style="margin-top: 0;">
+                <li><span class="bullet">★</span> <strong>Localisation :</strong> Cartographie des points de collecte et partenaires locaux.</li>
+                <li><span class="bullet">★</span> <strong>Guide Pédagogique :</strong> Consignes visuelles claires pour chaque matériau.</li>
+                <li><span class="bullet">★</span> <strong>Éco-Gestes :</strong> Conseils pratiques adaptés au mode de vie tunisien.</li>
+              </ul>
+              <div style="margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--border); font-size: 11.5px; color: var(--forest); font-weight: 700;">
+                ➜ Valide l'expertise technologique et assure une vitrine d'impact RSE.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Synergie Solution</div>
+          <div>Slide 04 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 5 : PRÉSENTATION D'ECOCONNECT (PRODUIT & USER JOURNEY)
+      ======================================================== -->
+      <section class="slide" data-slide="5">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">04 • PRODUIT PHARE</span>
+            <span class="academic-tag">UI/UX & Parcours Utilisateur</span>
+          </div>
+          <h2 class="slide-title">Présentation de la Plateforme EcoConnect</h2>
+          <p class="slide-subtitle">Le guide interactif pour localiser les points de recyclage et adopter les bons réflexes de tri</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="mobile-mockup-container">
+            <!-- MOCKUP MOBILE SMARTPHONE -->
+            <div class="smartphone-frame">
+              <div class="smartphone-screen">
+                <div class="notch-bar">
+                  <div class="notch-island"></div>
+                </div>
+
+                <div class="app-screen-header">
+                  <h5>EcoConnect</h5>
+                  <span>Tunis • 7j/7</span>
+                </div>
+
+                <div class="app-screen-search">
+                  <div class="mini-search-box">
+                    🔍 Bouteilles PET, verre, carton...
+                  </div>
+                </div>
+
+                <div class="materials-pills-scroll">
+                  <span class="mini-mat-pill active">Tous</span>
+                  <span class="mini-mat-pill">Plastique</span>
+                  <span class="mini-mat-pill">Verre</span>
+                  <span class="mini-mat-pill">Métal</span>
+                  <span class="mini-mat-pill">Carton</span>
+                </div>
+
+                <div class="app-mock-map-area">
+                  <div class="mock-pin pin-1" title="Point Centre-Ville"></div>
+                  <div class="mock-pin pin-2" title="Point La Marsa"></div>
+                  <div class="mock-pin pin-3" title="Point Borj Cédria"></div>
+
+                  <div class="mini-location-card">
+                    <h6>📍 Point Borj Cédria Eco-Campus</h6>
+                    <p>Bouteilles plastiques PET, canettes aluminium & papier. À 1.2 km.</p>
+                    <button class="btn-mock-directions">Itinéraire & Consignes de Tri</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PARCOURS UTILISATEUR EN 4 ÉTAPES -->
+            <div class="journey-timeline">
+              <div style="font-size: 13px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+                Parcours Utilisateur en 4 Étapes Simples
+              </div>
+
+              <div class="journey-step-card">
+                <div class="step-number-circle">1</div>
+                <div class="step-content">
+                  <h4>Localiser sa zone</h4>
+                  <p>L'utilisateur saisit sa commune ou active la géolocalisation pour afficher les bacs d'apport volontaire et partenaires de collecte à proximité.</p>
+                </div>
+              </div>
+
+              <div class="journey-step-card">
+                <div class="step-number-circle">2</div>
+                <div class="step-content">
+                  <h4>Identifier le matériau</h4>
+                  <p>Sélection directe de la matière (plastique, verre, métal, carton, D3E) avec indication visuelle immédiate des objets admissibles.</p>
+                </div>
+              </div>
+
+              <div class="journey-step-card">
+                <div class="step-number-circle">3</div>
+                <div class="step-content">
+                  <h4>Préparer son déchet</h4>
+                  <p>Consultation de la fiche conseil : vider les liquides, aplatir les emballages pour économiser l'espace, conserver les bouchons.</p>
+                </div>
+              </div>
+
+              <div class="journey-step-card">
+                <div class="step-number-circle">4</div>
+                <div class="step-content">
+                  <h4>Déposer & valoriser</h4>
+                  <p>Guidage GPS jusqu'au point sélectionné et calcul pédagogique de l'impact écologique réalisé (CO2 évité, matières préservées).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoConnect • Guide de Tri Digital</div>
+          <div>Slide 05 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 6 : NOS SERVICES (4 PÔLES D'ACTIVITÉ)
+      ======================================================== -->
+      <section class="slide" data-slide="6">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">05 • PORTFOLIO DE SERVICES</span>
+            <span class="academic-tag">Offre Complète</span>
+          </div>
+          <h2 class="slide-title">Nos Domaines d'Activité & Services</h2>
+          <p class="slide-subtitle">Quatre piliers d'expertise complémentaires alliant technologies web et communication d'impact</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-4" style="height: 100%;">
+            <!-- 1. EcoConnect -->
+            <div class="card card-accent-forest" style="display: flex; flex-direction: column;">
+              <span style="font-size: 10px; font-weight: 700; color: var(--forest); background: var(--mint-light); padding: 2px 8px; border-radius: 4px; align-self: flex-start; margin-bottom: 8px;">
+                CIVIQUE & GRATUIT
+              </span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--forest-dark); margin-bottom: 6px;">EcoConnect</h3>
+              <p style="font-size: 11.5px; color: var(--charcoal-light); margin-bottom: 12px;">
+                Portail citoyen de référence pour le tri et le recyclage en Tunisie.
+              </p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--forest); margin-bottom: 6px;">LIVRABLES :</div>
+              <ul class="card-list" style="margin-top: 0; font-size: 11px;">
+                <li><span class="bullet">•</span> Carte interactive des bacs.</li>
+                <li><span class="bullet">•</span> Fiches matières détaillées.</li>
+                <li><span class="bullet">•</span> Répertoire d'éco-gestes.</li>
+              </ul>
+            </div>
+
+            <!-- 2. EcoWeb -->
+            <div class="card card-accent-emerald" style="display: flex; flex-direction: column;">
+              <span style="font-size: 10px; font-weight: 700; color: white; background: var(--emerald); padding: 2px 8px; border-radius: 4px; align-self: flex-start; margin-bottom: 8px;">
+                DÉVELOPPEMENT WEB
+              </span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--forest-dark); margin-bottom: 6px;">EcoWeb</h3>
+              <p style="font-size: 11.5px; color: var(--charcoal-light); margin-bottom: 12px;">
+                Conception de sites vitrines et plateformes web éco-conçus.
+              </p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--forest); margin-bottom: 6px;">LIVRABLES :</div>
+              <ul class="card-list" style="margin-top: 0; font-size: 11px;">
+                <li><span class="bullet">•</span> Code optimisé (Green IT).</li>
+                <li><span class="bullet">•</span> Accessibilité (normes WCAG).</li>
+                <li><span class="bullet">•</span> Hébergement vert allégé.</li>
+              </ul>
+            </div>
+
+            <!-- 3. EcoMarketing -->
+            <div class="card card-accent-mint" style="display: flex; flex-direction: column;">
+              <span style="font-size: 10px; font-weight: 700; color: var(--forest-dark); background: var(--mint); padding: 2px 8px; border-radius: 4px; align-self: flex-start; margin-bottom: 8px;">
+                COMMUNICATION
+              </span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--forest-dark); margin-bottom: 6px;">EcoMarketing</h3>
+              <p style="font-size: 11.5px; color: var(--charcoal-light); margin-bottom: 12px;">
+                Gestion éthique des réseaux sociaux et valorisation RSE pour marques.
+              </p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--forest); margin-bottom: 6px;">LIVRABLES :</div>
+              <ul class="card-list" style="margin-top: 0; font-size: 11px;">
+                <li><span class="bullet">•</span> Community management vert.</li>
+                <li><span class="bullet">•</span> Carrousels éducatifs percutants.</li>
+                <li><span class="bullet">•</span> Storytelling environnemental.</li>
+              </ul>
+            </div>
+
+            <!-- 4. EcoAwareness -->
+            <div class="card card-accent-gold" style="display: flex; flex-direction: column;">
+              <span style="font-size: 10px; font-weight: 700; color: white; background: var(--sand-gold); padding: 2px 8px; border-radius: 4px; align-self: flex-start; margin-bottom: 8px;">
+                SENSIBILISATION
+              </span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--forest-dark); margin-bottom: 6px;">EcoAwareness</h3>
+              <p style="font-size: 11.5px; color: var(--charcoal-light); margin-bottom: 12px;">
+                Campagnes et ateliers de mobilisation écologique pour organisations.
+              </p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--forest); margin-bottom: 6px;">LIVRABLES :</div>
+              <ul class="card-list" style="margin-top: 0; font-size: 11px;">
+                <li><span class="bullet">•</span> Ateliers de sobriété numérique.</li>
+                <li><span class="bullet">•</span> Kits d'intervention pour campus.</li>
+                <li><span class="bullet">•</span> Webinaires et défis écologiques.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • 4 Pôles de Services</div>
+          <div>Slide 06 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 7 : PUBLIC CIBLE & ANALYSE DES BESOINS
+      ======================================================== -->
+      <section class="slide" data-slide="7">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">06 • MARCHÉ & CIBLES</span>
+            <span class="academic-tag">Segmentation Stratégique</span>
+          </div>
+          <h2 class="slide-title">Public Cible & Analyse des Besoins</h2>
+          <p class="slide-subtitle">Une adéquation prouvée entre les besoins réels du terrain et nos solutions numériques</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-4" style="height: 100%;">
+            <div class="card">
+              <div style="font-size: 24px; margin-bottom: 8px;">👥</div>
+              <h4 style="font-size: 14px; font-weight: 800; color: var(--forest); margin-bottom: 4px;">Citoyens & Étudiants</h4>
+              <p style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">Utilisateurs finaux</p>
+              <div style="font-size: 11px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">Besoin clé :</div>
+              <p style="font-size: 11.5px; color: var(--charcoal); margin-bottom: 10px;">Trouver en moins de 15 secondes où déposer un déchet spécifique sans ambiguïté.</p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--emerald); margin-bottom: 4px;">Réponse EcoTech :</div>
+              <p style="font-size: 11px; color: var(--charcoal-light);">Accès gratuit à EcoConnect, navigation Mobile First sans création de compte obligatoire.</p>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 24px; margin-bottom: 8px;">🏫</div>
+              <h4 style="font-size: 14px; font-weight: 800; color: var(--forest); margin-bottom: 4px;">Campus & Écoles</h4>
+              <p style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">Partenaires éducatifs</p>
+              <div style="font-size: 11px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">Besoin clé :</div>
+              <p style="font-size: 11.5px; color: var(--charcoal); margin-bottom: 10px;">Sensibiliser les étudiants et engager la communauté universitaire dans des projets éco-campus.</p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--emerald); margin-bottom: 4px;">Réponse EcoTech :</div>
+              <p style="font-size: 11px; color: var(--charcoal-light);">Ateliers EcoAwareness, challenges inter-universités de tri et kits visuels.</p>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 24px; margin-bottom: 8px;">🌱</div>
+              <h4 style="font-size: 14px; font-weight: 800; color: var(--forest); margin-bottom: 4px;">Associations Vertes</h4>
+              <p style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">Relais de terrain</p>
+              <div style="font-size: 11px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">Besoin clé :</div>
+              <p style="font-size: 11.5px; color: var(--charcoal); margin-bottom: 10px;">Donner de la visibilité à leurs journées de ramassage et collectes citoyennes.</p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--emerald); margin-bottom: 4px;">Réponse EcoTech :</div>
+              <p style="font-size: 11px; color: var(--charcoal-light);">Référencement prioritaire de leurs points de collecte et soutien en communication web.</p>
+            </div>
+
+            <div class="card">
+              <div style="font-size: 24px; margin-bottom: 8px;">🏢</div>
+              <h4 style="font-size: 14px; font-weight: 800; color: var(--forest); margin-bottom: 4px;">PME & Entreprises</h4>
+              <p style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">Clients B2B solvables</p>
+              <div style="font-size: 11px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">Besoin clé :</div>
+              <p style="font-size: 11.5px; color: var(--charcoal); margin-bottom: 10px;">Moderniser leur présence digitale tout en valorisant leurs actions de responsabilité sociétale.</p>
+              <div style="font-size: 11px; font-weight: 700; color: var(--emerald); margin-bottom: 4px;">Réponse EcoTech :</div>
+              <p style="font-size: 11px; color: var(--charcoal-light);">Prestations payantes de création de sites web éco-conçus et gestion de réseaux sociaux.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Cibles & Besoins</div>
+          <div>Slide 07 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 8 : MODÈLE ÉCONOMIQUE & VIABILITÉ
+      ======================================================== -->
+      <section class="slide" data-slide="8">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">07 • VIABILITÉ FINANCIÈRE</span>
+            <span class="academic-tag">Business Model Canvas</span>
+          </div>
+          <h2 class="slide-title">Modèle Économique Réaliste & Progressif</h2>
+          <p class="slide-subtitle">Une structure de revenus B2B solide permettant de pérenniser un service civique gratuit</p>
+        </div>
+
+        <div class="slide-body">
+          <!-- Avertissement éthique académique -->
+          <div style="background: #fef3c7; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 8px 14px; font-size: 11px; color: #92400e; font-weight: 600; margin-bottom: 16px;">
+            ⚠️ Transparence académique : Projet développé dans le cadre d'un module universitaire. Les flux financiers ci-dessous représentent des projections réalistes de viabilité économique, sans revendication de résultats antérieurs fictifs.
+          </div>
+
+          <div class="grid-3" style="margin-bottom: 16px;">
+            <div class="card card-accent-forest">
+              <span style="font-size: 10px; font-weight: 700; color: var(--emerald); background: var(--mint-light); padding: 2px 6px; border-radius: 4px;">B2B • PRESTATIONS</span>
+              <h4 style="font-size: 15px; font-weight: 800; color: var(--forest); margin: 6px 0;">Développement Web Éco-Conçu</h4>
+              <p style="font-size: 12px; color: var(--charcoal-light); margin-bottom: 8px;">Facturation de sites vitrines et applications web allégés pour entreprises tunisiennes engagées.</p>
+              <div style="font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 6px;">
+                • Forfaits de conception & refonte<br>
+                • Contrats de maintenance & Green SEO
+              </div>
+            </div>
+
+            <div class="card card-accent-emerald">
+              <span style="font-size: 10px; font-weight: 700; color: white; background: var(--emerald); padding: 2px 6px; border-radius: 4px;">B2B • RÉCURRENCE</span>
+              <h4 style="font-size: 15px; font-weight: 800; color: var(--forest); margin: 6px 0;">Abonnements Réseaux Sociaux</h4>
+              <p style="font-size: 12px; color: var(--charcoal-light); margin-bottom: 8px;">Packages mensuels de community management responsable pour PME et acteurs de l'économie circulaire.</p>
+              <div style="font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 6px;">
+                • Forfaits mensuels modulables<br>
+                • Création de visuels & modération
+              </div>
+            </div>
+
+            <div class="card card-accent-gold">
+              <span style="font-size: 10px; font-weight: 700; color: white; background: var(--sand-gold); padding: 2px 6px; border-radius: 4px;">B2B / B2G • ÉVÉNEMENTIEL</span>
+              <h4 style="font-size: 15px; font-weight: 800; color: var(--forest); margin: 6px 0;">Ateliers & Sensibilisation</h4>
+              <p style="font-size: 12px; color: var(--charcoal-light); margin-bottom: 8px;">Interventions clés en main auprès d'entreprises (RSE) et d'établissements d'enseignement privés.</p>
+              <div style="font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 6px;">
+                • Facturation à la session ou au module<br>
+                • Kits pédagogiques sous licence
+              </div>
+            </div>
+          </div>
+
+          <!-- PERSPECTIVES DE PARTENARIATS POUR ECOCONNECT -->
+          <div class="card" style="background: white; border: 1px dashed var(--emerald);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 12px; font-weight: 800; color: var(--forest);">Perspectives d'Avenir pour EcoConnect (Moyen Terme) :</span>
+                <span style="font-size: 12px; color: var(--charcoal-light);"> Recherche de mécénats institutionnels, subventions publiques d'aide à la transition écologique et partenariats éthiques non intrusifs avec les recycleurs agréés.</span>
+              </div>
+              <span style="font-size: 11px; font-weight: 700; color: var(--emerald); white-space: nowrap; margin-left: 12px;">Modèle Non-Intrusif</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Modèle Économique</div>
+          <div>Slide 08 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 9 : STRATÉGIE MARKETING DIGITAL
+      ======================================================== -->
+      <section class="slide" data-slide="9">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">08 • VISIBILITÉ DIGITALE</span>
+            <span class="academic-tag">Social Media & Pédagogie</span>
+          </div>
+          <h2 class="slide-title">Stratégie de Marketing Digital & Réseaux Sociaux</h2>
+          <p class="slide-subtitle">Engager la jeunesse tunisienne sur Instagram et Facebook grâce à une communication valorisante et positive</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="social-strategy-container">
+            <!-- MOCKUP PROFIL INSTAGRAM -->
+            <div class="instagram-feed-card">
+              <div class="ig-profile-header">
+                <div class="ig-avatar">ET</div>
+                <div class="ig-user-info">
+                  <h4>ecotech_digital_tn <span class="verified-badge">✔</span></h4>
+                  <p>Technologie & Écologie • Tunisie 🇹🇳</p>
+                </div>
+              </div>
+
+              <div class="ig-stats-row">
+                <span><strong>12</strong> posts</span>
+                <span><strong>1.4k</strong> abonnés</span>
+                <span><strong>85</strong> abonnements</span>
+              </div>
+
+              <div class="ig-bio">
+                🌿 Le numérique au service de la planète.<br>
+                📍 Trouver où trier en Tunisie avec <strong>#EcoConnect</strong>.<br>
+                💡 Astuces zéro déchet & développement web propre.
+              </div>
+
+              <!-- FEED 6 POSTS RÉALISTES -->
+              <div class="ig-grid-posts">
+                <div class="ig-post-tile tile-1">
+                  <span class="tile-badge">Carrousel</span>
+                  Vrai ou Faux : Le plastique PET
+                </div>
+                <div class="ig-post-tile tile-2">
+                  <span class="tile-badge">Reel</span>
+                  Où jeter ses piles à Tunis ?
+                </div>
+                <div class="ig-post-tile tile-3">
+                  <span class="tile-badge">Astuce</span>
+                  5 alternatives au sac plastique
+                </div>
+                <div class="ig-post-tile tile-4">
+                  <span class="tile-badge">Tuto</span>
+                  Comment aplatir ses cartons ?
+                </div>
+                <div class="ig-post-tile tile-5">
+                  <span class="tile-badge">Quiz</span>
+                  Le verre se recycle-t-il à l'infini ?
+                </div>
+                <div class="ig-post-tile tile-6">
+                  <span class="tile-badge">Actu</span>
+                  Éco-conception logicielle : c'est quoi ?
+                </div>
+              </div>
+            </div>
+
+            <!-- CALENDRIER ÉDITORIAL TYPE -->
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="font-size: 13px; font-weight: 800; color: var(--forest); text-transform: uppercase;">
+                Planning Éditorial Hebdomadaire Type
+              </div>
+
+              <table class="calendar-table">
+                <thead>
+                  <tr>
+                    <th>Jour</th>
+                    <th>Pilier & Format</th>
+                    <th>Objectif Pédagogique</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="day-pill">Lundi</span></td>
+                    <td><strong>Le Chiffre Vert</strong><br><span style="font-size: 10.5px; color: var(--muted);">Infographie percutante</span></td>
+                    <td>Sensibiliser avec une donnée vérifiée sur la Tunisie.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="day-pill">Mercredi</span></td>
+                    <td><strong>Focus Matière</strong><br><span style="font-size: 10.5px; color: var(--muted);">Carrousel Instagram</span></td>
+                    <td>Décrypter une résine plastique ou le recyclage du verre.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="day-pill">Vendredi</span></td>
+                    <td><strong>Éco-Geste Local</strong><br><span style="font-size: 10.5px; color: var(--muted);">Reel vidéo 30s</span></td>
+                    <td>Donner un conseil actionnable pour le week-end.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="day-pill">Dimanche</span></td>
+                    <td><strong>Quiz & Défi Story</strong><br><span style="font-size: 10.5px; color: var(--muted);">Sondage interactif</span></td>
+                    <td>Mesurer les acquis par le jeu et stimuler le débat.</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 11.5px;">
+                <strong style="color: var(--forest);">Hashtags de campagne :</strong>
+                <span style="color: var(--emerald); font-weight: 600;"> #EcoTechTunisie #EcoConnect #RecyclageTunisie #NumeriqueResponsable #ZeroDechet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Stratégie Marketing Digital</div>
+          <div>Slide 09 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 10 : IDENTITÉ VISUELLE & COMMUNICATION
+      ======================================================== -->
+      <section class="slide" data-slide="10">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">09 • CHARTE GRAPHIQUE</span>
+            <span class="academic-tag">Design System & Image de Marque</span>
+          </div>
+          <h2 class="slide-title">Identité Visuelle & Communication de Marque</h2>
+          <p class="slide-subtitle">Une charte graphique moderne, épurée et scientifique traduisant l'harmonie entre technologie et écologie</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2" style="margin-bottom: 16px;">
+            <!-- CONCEPT LOGO ENTREPRISE -->
+            <div class="card card-accent-forest">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="46" fill="#103B2B"/>
+                  <path d="M50 20C50 20 72 32 72 54C72 68 60 78 50 82C40 78 28 68 28 54C28 32 50 20 50 20Z" fill="#2D6A4F" stroke="#52B788" stroke-width="3"/>
+                  <path d="M50 25V78" stroke="#D8F3DC" stroke-width="3"/>
+                  <circle cx="64" cy="38" r="3.5" fill="#52B788"/>
+                  <path d="M50 44L64 38" stroke="#D8F3DC" stroke-width="2.5"/>
+                  <circle cx="36" cy="50" r="3.5" fill="#52B788"/>
+                  <path d="M50 56L36 50" stroke="#D8F3DC" stroke-width="2.5"/>
+                </svg>
+                <div>
+                  <h4 style="font-size: 14px; font-weight: 800; color: var(--forest);">Logo EcoTech Digital (Entreprise)</h4>
+                  <p style="font-size: 11px; color: var(--muted);">Symbiose technologique et biologique</p>
+                </div>
+              </div>
+              <p style="font-size: 12px; color: var(--charcoal-light); line-height: 1.45;">
+                La feuille végétale stylisée s'entrelace avec les circuits imprimés d'une puce électronique. Elle exprime visuellement la puissance du calcul informatique au service de la régénération environnementale.
+              </p>
+            </div>
+
+            <!-- CONCEPT LOGO PRODUIT ECOCONNECT -->
+            <div class="card card-accent-mint">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="46" fill="#2D6A4F"/>
+                  <!-- Boucle de Möbius stylisée avec point GPS -->
+                  <path d="M30 45C30 35 45 35 50 45C55 55 70 55 70 45C70 35 55 35 50 45C45 55 30 55 30 45Z" stroke="#D8F3DC" stroke-width="5" fill="none"/>
+                  <circle cx="50" cy="45" r="5" fill="#52B788" stroke="#ffffff" stroke-width="2"/>
+                </svg>
+                <div>
+                  <h4 style="font-size: 14px; font-weight: 800; color: var(--forest);">Logo EcoConnect (Produit)</h4>
+                  <p style="font-size: 11px; color: var(--muted);">Boucle infinie et nœud de réseau</p>
+                </div>
+              </div>
+              <p style="font-size: 12px; color: var(--charcoal-light); line-height: 1.45;">
+                Réinterprétation contemporaine du ruban de Möbius (recyclage) sous forme de nœud de communication réseau et de repère de géolocalisation. Évoque la circularité continue des matières.
+              </p>
+            </div>
+          </div>
+
+          <!-- PALETTE CHROMATIQUE & TYPOGRAPHIE -->
+          <div class="card" style="background: white;">
+            <div style="font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; margin-bottom: 12px;">
+              Palette Chromatique & Directives Graphiques
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 12px;">
+              <div style="background: #103B2B; color: white; padding: 10px; border-radius: 8px; text-align: center; font-size: 11px; font-weight: 700;">
+                #103B2B<br><span style="font-size: 9px; opacity: 0.8;">Vert Forêt</span>
+              </div>
+              <div style="background: #2D6A4F; color: white; padding: 10px; border-radius: 8px; text-align: center; font-size: 11px; font-weight: 700;">
+                #2D6A4F<br><span style="font-size: 9px; opacity: 0.8;">Vert Éco</span>
+              </div>
+              <div style="background: #52B788; color: #103b2b; padding: 10px; border-radius: 8px; text-align: center; font-size: 11px; font-weight: 700;">
+                #52B788<br><span style="font-size: 9px; opacity: 0.8;">Vert Menthe</span>
+              </div>
+              <div style="background: #F4F1DE; color: #1e293b; border: 1px solid var(--border); padding: 10px; border-radius: 8px; text-align: center; font-size: 11px; font-weight: 700;">
+                #F4F1DE<br><span style="font-size: 9px; opacity: 0.8;">Sable Doux</span>
+              </div>
+              <div style="background: #FFFFFF; color: #1e293b; border: 1px solid var(--border); padding: 10px; border-radius: 8px; text-align: center; font-size: 11px; font-weight: 700;">
+                #FFFFFF<br><span style="font-size: 9px; opacity: 0.8;">Blanc Pur</span>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11.5px; color: var(--charcoal-light); border-top: 1px solid var(--border); padding-top: 8px;">
+              <span><strong>Typographie :</strong> Sans-Serif géométrique (Plus Jakarta Sans & Inter) pour une lisibilité maximale sur écran.</span>
+              <span><strong>Ton de communication :</strong> Pédagogique, encourageant, scientifique, orienté solutions, zéro culpabilisation.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Charte Graphique</div>
+          <div>Slide 10 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 11 : DIMENSION INFORMATIQUE & COMPÉTENCES
+      ======================================================== -->
+      <section class="slide" data-slide="11">
+        <div class="slide-header">
+          <div class="slide-badge-row">
+            <span class="category-badge">10 • RIGUEUR TECHNIQUE</span>
+            <span class="academic-tag">Stack & Marketing de Soi</span>
+          </div>
+          <h2 class="slide-title">Dimension Informatique & Compétences Mobilisées</h2>
+          <p class="slide-subtitle">Une architecture logicielle rigoureusement documentée, distinguant prototype fonctionnel et feuille de route</p>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2" style="margin-bottom: 16px;">
+            <!-- SOCLE ACTUEL DU PROTOTYPE -->
+            <div class="card card-accent-forest">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <h4 style="font-size: 14px; font-weight: 800; color: var(--forest);">Socle Développé (Prototype Actuel)</h4>
+                <span style="font-size: 10px; font-weight: 700; background: var(--mint-light); color: var(--forest); padding: 2px 6px; border-radius: 4px;">OPÉRATIONNEL</span>
+              </div>
+              <ul class="card-list" style="font-size: 11.5px; margin-top: 0;">
+                <li><span class="bullet">✔</span> <strong>Front-End :</strong> HTML5 sémantique, CSS3 moderne (Flexbox, CSS Grid) sans framework superflu pour préserver la légèreté.</li>
+                <li><span class="bullet">✔</span> <strong>Interactivité :</strong> JavaScript Vanilla modulaire gérant la recherche dynamique et les filtres de matières.</li>
+                <li><span class="bullet">✔</span> <strong>Ergonomie :</strong> Conception 100% responsive (Mobile First) et contraste conforme aux critères WCAG 2.1.</li>
+                <li><span class="bullet">✔</span> <strong>Données :</strong> Structure JSON locale simulant les coordonnées et matières des points de collecte.</li>
+              </ul>
+            </div>
+
+            <!-- FEUILLE DE ROUTE TECHNIQUE FUTURE -->
+            <div class="card card-accent-emerald">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <h4 style="font-size: 14px; font-weight: 800; color: var(--emerald);">Feuille de Route Technique (Future)</h4>
+                <span style="font-size: 10px; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px;">PLANIFIÉ</span>
+              </div>
+              <ul class="card-list" style="font-size: 11.5px; margin-top: 0;">
+                <li><span class="bullet">➜</span> <strong>Back-End prévu :</strong> Serveur Node.js avec le framework Express.js pour une architecture API REST légère et rapide.</li>
+                <li><span class="bullet">➜</span> <strong>Base de Données relationnelle :</strong> MySQL pour stocker de façon pérenne les points vérifiés, catégories et statistiques.</li>
+                <li><span class="bullet">➜</span> <strong>Cartographie ouverte :</strong> Intégration Leaflet.js / OpenStreetMap pour éviter les traceurs intrusifs et respecter la vie privée.</li>
+                <li><span class="bullet">➜</span> <strong>Protection des données :</strong> Conformité avec la législation tunisienne (INPDP) et respect des principes RGPD.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- COMPÉTENCES VALORISÉES (MARKETING DE SOI) -->
+          <div class="card" style="background: white;">
+            <div style="font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; margin-bottom: 10px;">
+              Valorisation des Compétences Clés (« Marketing de Soi »)
+            </div>
+            <div class="grid-4" style="gap: 12px;">
+              <div style="background: #f8fafc; padding: 10px; border-radius: 8px; border-left: 3px solid var(--forest);">
+                <div style="font-size: 11.5px; font-weight: 700; color: var(--forest);">Ingénierie Web</div>
+                <div style="font-size: 11px; color: var(--charcoal-light); margin-top: 2px;">Maîtrise du développement web sobre, de la performance et de l'accessibilité.</div>
+              </div>
+
+              <div style="background: #f8fafc; padding: 10px; border-radius: 8px; border-left: 3px solid var(--emerald);">
+                <div style="font-size: 11.5px; font-weight: 700; color: var(--emerald);">Design UI / UX</div>
+                <div style="font-size: 11px; color: var(--charcoal-light); margin-top: 2px;">Conception d'interfaces centrées utilisateur et parcours d'utilité publique.</div>
+              </div>
+
+              <div style="background: #f8fafc; padding: 10px; border-radius: 8px; border-left: 3px solid var(--mint);">
+                <div style="font-size: 11.5px; font-weight: 700; color: var(--forest-dark);">Stratégie Digitale</div>
+                <div style="font-size: 11px; color: var(--charcoal-light); margin-top: 2px;">Planification de contenu éthique, community management et vulgarisation.</div>
+              </div>
+
+              <div style="background: #f8fafc; padding: 10px; border-radius: 8px; border-left: 3px solid var(--sand-gold);">
+                <div style="font-size: 11.5px; font-weight: 700; color: #92400e);">Gestion de Projet</div>
+                <div style="font-size: 11px; color: var(--charcoal-light); margin-top: 2px;">Rigueur déontologique, planification par étapes et esprit d'innovation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-footer">
+          <div class="slide-footer-brand">EcoTech Digital • Dimension Informatique & Compétences</div>
+          <div>Slide 11 / 12</div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           SLIDE 12 : CONCLUSION & PERSPECTIVES
+      ======================================================== -->
+      <section class="slide slide-cover" data-slide="12">
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <div class="slide-header">
+            <div class="slide-badge-row">
+              <span class="cover-badge-top">11 • CLÔTURE DU PROJET</span>
+              <span class="academic-tag" style="color: #cbd5e1;">Bilan & Perspectives</span>
+            </div>
+            <h2 class="cover-hero-title" style="font-size: 38px;">Conclusion & Perspectives d'Avenir</h2>
+            <p class="cover-slogan" style="font-size: 16px; margin-top: 4px;">Faire grandir l'impact environnemental par des jalons mesurables et réalistes</p>
+          </div>
+
+          <div class="slide-body">
+            <div class="grid-3" style="margin-bottom: 24px;">
+              <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(82, 183, 136, 0.3); border-radius: var(--radius-md); padding: 18px;">
+                <span style="font-size: 10px; font-weight: 800; color: var(--mint); letter-spacing: 0.8px;">HORIZON 1 • COURT TERME</span>
+                <h4 style="font-size: 15px; font-weight: 700; color: white; margin: 8px 0 6px 0;">Validation Campus Pilote</h4>
+                <p style="font-size: 12px; color: #cbd5e1; line-height: 1.45;">
+                  Déploiement du prototype d'EcoConnect auprès d'un panel test d'étudiants universitaires pour recueillir les retours d'ergonomie et perfectionner les fiches conseils.
+                </p>
+              </div>
+
+              <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(82, 183, 136, 0.3); border-radius: var(--radius-md); padding: 18px;">
+                <span style="font-size: 10px; font-weight: 800; color: var(--mint); letter-spacing: 0.8px;">HORIZON 2 • MOYEN TERME</span>
+                <h4 style="font-size: 15px; font-weight: 700; color: white; margin: 8px 0 6px 0;">Partenariats de Terrain</h4>
+                <p style="font-size: 12px; color: #cbd5e1; line-height: 1.45;">
+                  Collaboration avec les associations écologiques actives et les municipalités du Grand Tunis pour auditer et intégrer leurs véritables points d'apport volontaire.
+                </p>
+              </div>
+
+              <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(82, 183, 136, 0.3); border-radius: var(--radius-md); padding: 18px;">
+                <span style="font-size: 10px; font-weight: 800; color: var(--mint); letter-spacing: 0.8px;">HORIZON 3 • LONG TERME</span>
+                <h4 style="font-size: 15px; font-weight: 700; color: white; margin: 8px 0 6px 0;">Évolution PWA & Extension</h4>
+                <p style="font-size: 12px; color: #cbd5e1; line-height: 1.45;">
+                  Transformation de la plateforme en Progressive Web App téléchargeable et couverture progressive des principaux gouvernorats de la République tunisienne.
+                </p>
+              </div>
+            </div>
+
+            <!-- SLOGAN DE FIN EN MAJESTÉ -->
+            <div style="background: white; border-radius: var(--radius-md); padding: 20px 28px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+              <div style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
+                SLOGAN DE CLÔTURE OFFICIEL
+              </div>
+              <div style="font-size: 20px; font-weight: 800; color: var(--forest);">
+                « EcoTech Digital : innovons aujourd'hui pour une planète plus durable. »
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-footer" style="border-top-color: rgba(255, 255, 255, 0.15); color: #94a3b8;">
+            <div style="color: var(--mint); font-weight: 600;">EcoTech Digital • Merci pour votre écoute et vos questions</div>
+            <div>Slide 12 / 12</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- TIROIR DES NOTES DE L'ORATEUR (DISCOURS ORAL POUR LE PROFESSEUR) -->
+  <aside class="speaker-notes-drawer" id="speakerNotesDrawer">
+    <div class="notes-header">
+      <div class="notes-title">
+        <span>🎙️ Script d'Oral & Recommandations pour l'Étudiant</span>
+        <span style="font-size: 11px; font-weight: 600; color: var(--muted);" id="notesSlideNumber">Slide 01</span>
+      </div>
+      <button class="btn-action" id="closeNotesBtn" style="padding: 4px 8px; font-size: 11px; background: #e2e8f0; color: #1e293b; border: none;">
+        Fermer ✕
+      </button>
+    </div>
+    <div class="notes-body" id="notesContent">
+      <!-- Rempli dynamiquement en JavaScript pour chaque slide -->
+    </div>
+  </aside>
+
+  <!-- MODAL VUE EN GRILLE (APERÇU DES 12 SLIDES) -->
+  <div class="overview-modal" id="overviewModal">
+    <div class="overview-inner">
+      <div class="overview-header">
+        <div>
+          <h3>Aperçu des 12 Diapositives</h3>
+          <p style="font-size: 13px; color: #cbd5e1;">Cliquez sur une diapositive pour y naviguer instantanément.</p>
+        </div>
+        <button class="btn-action" id="closeOverviewBtn">Fermer ✕</button>
+      </div>
+      <div class="thumbnails-grid" id="thumbnailsGrid">
+        <!-- Généré dynamiquement en JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION FLOTTANTE EN BAS À DROITE -->
+  <div class="floating-nav">
+    <button class="nav-arrow-btn" id="prevSlideBtn" title="Diapositive précédente (Flèche Gauche)">❮</button>
+    <button class="nav-arrow-btn" id="nextSlideBtn" title="Diapositive suivante (Flèche Droite ou Espace)">❯</button>
+  </div>
+
+  <!-- JAVASCRIPT COMPLET POUR L'INTERACTIVITÉ -->
+  <script>
+    // Discours et conseils oraux détaillés pour chaque slide
+    const speakerNotesData = {
+      1: `
+        <p><strong>Temps suggéré : 1 minute</strong></p>
+        <p>« Bonjour Monsieur/Madame le Professeur, chers membres du jury. J'ai le plaisir de vous présenter aujourd'hui le projet <strong>EcoTech Digital</strong>, conçu dans le cadre du module <em>Techniques de recherche d'emploi et Marketing de soi</em>.</p>
+        <p>Notre raison d'être se résume en une formule : <em>"Le numérique au service de la planète"</em>. Ce projet me permet d'incarner une double expertise : le développement technologique éco-responsable et la communication digitale d'impact, appliqués à un enjeu sociétal critique en Tunisie. »</p>
+        <div class="oral-cue">💡 Conseil : Établissez un contact visuel confiant avec le professeur et soulignez que ce projet démontre vos compétences réelles.</div>
+      `,
+      2: `
+        <p><strong>Temps suggéré : 1 minute</strong></p>
+        <p>« EcoTech Digital est un projet de startup GreenTech ancré dans la réalité tunisienne. Notre mission est d'armer les acteurs de notre société — qu'il s'agisse de citoyens, d'écoles ou d'entreprises — d'outils numériques pour accélérer la transition écologique.</p>
+        <p>Nous nous appuyons sur quatre piliers cardinaux : la sobriété logicielle (Green IT), la rigueur scientifique des consignes sans compromis, l'inclusion citoyenne et une transparence éthique totale, bien loin des illusions du greenwashing. »</p>
+      `,
+      3: `
+        <p><strong>Temps suggéré : 1 minute 15</strong></p>
+        <p>« Pourquoi avoir initié EcoTech Digital ? Parce qu'en Tunisie, la volonté citoyenne d'agir se heurte à un triple mur :</p>
+        <p>1. L'opacité territoriale : les citoyens veulent trier mais ignorent où se trouvent les bacs de tri et les filières de valorisation.<br>
+        2. La confusion technique : beaucoup d'emballages jetés dans les bennes ne sont pas recyclables, faute de consignes claires.<br>
+        3. Le déficit d'outils numériques modernes : les associations peinent à mobiliser les jeunes sans plateformes interactives.<br>
+        Notre défi : transformer cette bonne volonté en impact quotidien mesurable grâce au digital. »</p>
+      `,
+      4: `
+        <p><strong>Temps suggéré : 1 minute 15</strong></p>
+        <p>« Notre réponse repose sur une architecture hybride originale. D'un côté, <strong>EcoTech Digital</strong> opère comme agence de services numériques responsables, en concevant des sites web éco-conçus et des campagnes digitales pour des entreprises clientes.</p>
+        <p>De l'autre, ces compétences et ces revenus financent et développent <strong>EcoConnect</strong>, un portail citoyen gratuit d'utilité publique. C'est un cercle vertueux : l'agence assure la viabilité économique, tandis qu'EcoConnect valide notre légitimité RSE sur le terrain. »</p>
+      `,
+      5: `
+        <p><strong>Temps suggéré : 1 minute 30</strong></p>
+        <p>« Voici notre produit phare : <strong>EcoConnect</strong>. Comme vous le constatez sur ce prototype mobile, l'interface est épurée, intuitive et pensée Mobile First. En moins de 10 secondes, l'utilisateur :</p>
+        <p>1. Localise sa commune,<br>
+        2. Sélectionne le matériau (plastique, verre, métal),<br>
+        3. Découvre la préparation requise (vider le flacon, conserver le bouchon),<br>
+        4. Et suit l'itinéraire vers le point de collecte le plus proche.<br>
+        Nous levons ainsi tous les freins psychologiques et pratiques au tri en Tunisie. »</p>
+      `,
+      6: `
+        <p><strong>Temps suggéré : 1 minute 15</strong></p>
+        <p>« Pour assurer la solidité de notre offre, nous avons structuré nos activités en 4 pôles clairs :</p>
+        <p>• <strong>EcoConnect :</strong> Le portail citoyen gratuit.<br>
+        • <strong>EcoWeb :</strong> Le développement de sites web professionnels éco-conçus, conformes aux normes d'accessibilité WCAG et avec un code allégé.<br>
+        • <strong>EcoMarketing :</strong> Une stratégie de présence éthique sur les réseaux sociaux.<br>
+        • <strong>EcoAwareness :</strong> Des ateliers et kits de sensibilisation destinés aux campus et comités RSE. »</p>
+      `,
+      7: `
+        <p><strong>Temps suggéré : 1 minute</strong></p>
+        <p>« Notre segmentation stratégique s'adresse à quatre publics bien distincts : les citoyens et étudiants qui utilisent l'application gratuitement ; les universités et écoles partenaires pour les ateliers ; les associations vertes dont nous amplifions les collectes ; et enfin les PME locales qui composent notre clientèle B2B payante pour financer l'écosystème. »</p>
+      `,
+      8: `
+        <p><strong>Temps suggéré : 1 minute 15</strong></p>
+        <p>« Sur le plan économique, nous tenons à une transparence académique absolue : nous présentons ici des projections de faisabilité rigoureuses. Notre rentabilité ne repose pas sur les citoyens, mais sur des prestations B2B concrètes : la création de sites internet éco-conçus, des abonnements mensuels de community management vert et l'animation d'ateliers de sobriété numérique en entreprise. Cela garantit un modèle autonome et pérenne. »</p>
+      `,
+      9: `
+        <p><strong>Temps suggéré : 1 minute 15</strong></p>
+        <p>« Pour notre marketing digital, nous privilégions Instagram et Facebook avec une tonalité bienveillante, positive et basée sur le jeu. Notre calendrier éditorial hebdomadaire fixe 4 rendez-vous immanquables : le chiffre vert vulgarisé le lundi, le focus matière le mercredi, l'astuce zéro déchet le vendredi, et le quiz interactif en story le dimanche. Nous créons ainsi une communauté engagée sans jamais culpabiliser. »</p>
+      `,
+      10: `
+        <p><strong>Temps suggéré : 1 minute</strong></p>
+        <p>« Notre identité visuelle incarne la fusion du végétal et du numérique. Notre emblème fusionne les nervures d'une feuille et les pistes d'un circuit imprimé. Le logo d'EcoConnect reprend quant à lui le ruban de Möbius du recyclage revisité sous forme de nœuds de réseau. Notre palette chromatique — vert forêt, vert menthe et sable méditerranéen — offre un ancrage naturel et sérieux à la fois. »</p>
+      `,
+      11: `
+        <p><strong>Temps suggéré : 1 minute 30</strong></p>
+        <p>« Sur le volet informatique, j'ai tenu à appliquer une déontologie scientifique stricte. Nous distinguons ce qui est déjà développé dans notre prototype fonctionnel (un front-end complet, responsive et accessible en HTML5/CSS3/JavaScript Vanilla), de notre feuille de route future (l'implémentation d'une API Node.js/Express, d'une base de données MySQL et d'une cartographie OpenStreetMap avec données vérifiées).</p>
+        <p>Dans l'optique du Marketing de soi, ce travail atteste de ma polyvalence : compétences en développement logiciel propre, design UX centré humain, gestion de projet et respect rigoureux de la protection des données personnelles (INPDP). »</p>
+      `,
+      12: `
+        <p><strong>Temps suggéré : 1 minute</strong></p>
+        <p>« En conclusion, EcoTech Digital illustre comment mettre les compétences technologiques au service d'un défi civique et environnemental urgent en Tunisie. Nos prochaines étapes : la validation pilote sur les campus universitaires, le référencement des points réels avec les associations et le passage à une Progressive Web App.</p>
+        <p>Je vous remercie chaleureusement pour votre bienveillante attention, et je serai ravi de répondre à vos questions et remarques. »</p>
+      `
+    };
+
+    const slideTitles = [
+      "Page de Garde & Dossier",
+      "Présentation de l'Entreprise",
+      "Problématique Environnementale",
+      "Notre Solution & Synergies",
+      "Présentation d'EcoConnect",
+      "Nos Domaines d'Activité",
+      "Public Cible & Besoins",
+      "Modèle Économique",
+      "Stratégie Marketing Digital",
+      "Identité Visuelle & Charte",
+      "Dimension Informatique & Compétences",
+      "Conclusion & Perspectives"
+    ];
+
+    let currentSlide = 1;
+    const totalSlides = 12;
+
+    // Éléments du DOM
+    const slides = document.querySelectorAll('.slide');
+    const slideIndicator = document.getElementById('slideIndicator');
+    const prevSlideBtn = document.getElementById('prevSlideBtn');
+    const nextSlideBtn = document.getElementById('nextSlideBtn');
+    const notesDrawer = document.getElementById('speakerNotesDrawer');
+    const notesContent = document.getElementById('notesContent');
+    const notesSlideNumber = document.getElementById('notesSlideNumber');
+    const notesToggleBtn = document.getElementById('notesToggleBtn');
+    const closeNotesBtn = document.getElementById('closeNotesBtn');
+    const overviewModal = document.getElementById('overviewModal');
+    const overviewBtn = document.getElementById('overviewBtn');
+    const closeOverviewBtn = document.getElementById('closeOverviewBtn');
+    const thumbnailsGrid = document.getElementById('thumbnailsGrid');
+    const editModeBtn = document.getElementById('editModeBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const printBtn = document.getElementById('printBtn');
+
+    // Minuteur de soutenance
+    let timerSeconds = 0;
+    let timerInterval = null;
+    let isTimerRunning = false;
+    const timerDisplay = document.getElementById('timerDisplay');
+    const timerToggleBtn = document.getElementById('timerToggleBtn');
+    const timerResetBtn = document.getElementById('timerResetBtn');
+
+    // Afficher une slide spécifique
+    function goToSlide(n) {
+      if (n < 1 || n > totalSlides) return;
+      currentSlide = n;
+
+      slides.forEach(slide => {
+        const slideNum = parseInt(slide.getAttribute('data-slide'));
+        slide.classList.toggle('active', slideNum === currentSlide);
+      });
+
+      slideIndicator.textContent = `SLIDE ${String(currentSlide).padStart(2, '0')} / ${totalSlides}`;
+      prevSlideBtn.disabled = (currentSlide === 1);
+      nextSlideBtn.disabled = (currentSlide === totalSlides);
+
+      // Mettre à jour les notes orales
+      notesSlideNumber.textContent = `Slide ${String(currentSlide).padStart(2, '0')} — ${slideTitles[currentSlide - 1]}`;
+      notesContent.innerHTML = speakerNotesData[currentSlide] || "<p>Aucune note spécifique pour cette slide.</p>";
+
+      // Mettre à jour la grille de miniatures
+      document.querySelectorAll('.thumb-card').forEach((tc, idx) => {
+        tc.classList.toggle('active', idx + 1 === currentSlide);
+      });
+    }
+
+    // Gestion du minuteur
+    function formatTime(totalSec) {
+      const m = Math.floor(totalSec / 60);
+      const s = totalSec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    timerToggleBtn.addEventListener('click', () => {
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        timerToggleBtn.textContent = '▶';
+      } else {
+        isTimerRunning = true;
+        timerToggleBtn.textContent = '⏸';
+        timerInterval = setInterval(() => {
+          timerSeconds++;
+          timerDisplay.textContent = formatTime(timerSeconds);
+        }, 1000);
+      }
+    });
+
+    timerResetBtn.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      timerSeconds = 0;
+      timerDisplay.textContent = "00:00";
+      timerToggleBtn.textContent = '▶';
+    });
+
+    // Générer la grille d'aperçu
+    function generateThumbnails() {
+      thumbnailsGrid.innerHTML = '';
+      slideTitles.forEach((title, idx) => {
+        const card = document.createElement('div');
+        card.className = `thumb-card ${idx + 1 === currentSlide ? 'active' : ''}`;
+        card.innerHTML = `
+          <div class="thumb-num">Slide ${String(idx + 1).padStart(2, '0')}</div>
+          <div class="thumb-title">${title}</div>
+          <div style="font-size: 10px; color: var(--muted);">Cliquez pour afficher</div>
+        `;
+        card.addEventListener('click', () => {
+          goToSlide(idx + 1);
+          overviewModal.classList.remove('open');
+        });
+        thumbnailsGrid.appendChild(card);
+      });
+    }
+    generateThumbnails();
+
+    // Événements de navigation
+    prevSlideBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    nextSlideBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+    // Notes orales toggle
+    notesToggleBtn.addEventListener('click', () => {
+      notesDrawer.classList.toggle('open');
+      notesToggleBtn.classList.toggle('active');
+    });
+    closeNotesBtn.addEventListener('click', () => {
+      notesDrawer.classList.remove('open');
+      notesToggleBtn.classList.remove('active');
+    });
+
+    // Aperçu toggle
+    overviewBtn.addEventListener('click', () => {
+      overviewModal.classList.add('open');
+    });
+    closeOverviewBtn.addEventListener('click', () => {
+      overviewModal.classList.remove('open');
+    });
+
+    // Mode Édition
+    let isEditMode = false;
+    editModeBtn.addEventListener('click', () => {
+      isEditMode = !isEditMode;
+      document.body.classList.toggle('edit-mode', isEditMode);
+      editModeBtn.classList.toggle('active', isEditMode);
+
+      const editableElements = document.querySelectorAll('.card-title, .card-desc, .slide-title, .slide-subtitle, p, h4');
+      editableElements.forEach(el => {
+        el.setAttribute('contenteditable', isEditMode ? 'true' : 'false');
+      });
+
+      if (isEditMode) {
+        editModeBtn.innerHTML = '💾 Sauvegarder & Quitter';
+        alert('Mode Édition activé ! Vous pouvez cliquer sur n\'importe quel texte des diapositives pour le modifier directement. Cliquez à nouveau sur ce bouton pour valider.');
+      } else {
+        editModeBtn.innerHTML = '✏️ Mode Édition';
+        // Sauvegarder dans localStorage
+        localStorage.setItem('ecotech_deck_content', document.getElementById('slideDeck').innerHTML);
+      }
+    });
+
+    // Plein écran
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          alert(`Erreur plein écran: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    // Imprimer / PDF
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+
+    // Raccourcis clavier
+    document.addEventListener('keydown', (e) => {
+      // Ignorer si on est en train de taper dans un champ
+      if (e.target.tagName === 'INPUT' || e.target.isContentEditable) return;
+
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        goToSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+        e.preventDefault();
+        goToSlide(currentSlide - 1);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        goToSlide(1);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        goToSlide(totalSlides);
+      } else if (e.key === 'n' || e.key === 'N') {
+        notesToggleBtn.click();
+      } else if (e.key === 'o' || e.key === 'O') {
+        overviewModal.classList.toggle('open');
+      } else if (e.key === 'f' || e.key === 'F') {
+        fullscreenBtn.click();
+      } else if (e.key === 'Escape') {
+        overviewModal.classList.remove('open');
+        notesDrawer.classList.remove('open');
+        notesToggleBtn.classList.remove('active');
+      }
+    });
+
+    // Initialisation
+    goToSlide(1);
+  </script>
+</body>
+</html>
